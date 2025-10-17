@@ -41,8 +41,6 @@ Key components include:
 - OLED display  
 - Key input  
 
-<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/4a4441ff-9b04-4706-97bb-04badf1ea1a3" />
-
 ---
 
 ## System Workflow
