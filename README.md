@@ -77,7 +77,7 @@ Project components:
 - The **monitor node** receives and displays both the target and actual speeds.
 
 ### CAN (Controller Area Network)
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
+<img width="833" height="295" alt="image" src="https://github.com/user-attachments/assets/16829a66-66e8-4d83-bf3b-6a4bcbd5f015" />
 
 ### PID (Proportional–Integral–Derivative)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/f2104576-5ba6-4886-9b86-deb1f6a0e455" />
