@@ -36,6 +36,8 @@ Key components include:
 
 ## System Workflow
 
+### CAN (Controller Area Network)
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
 ### Speed Monitoring
 - The **control node** transmits the target speed via CAN.  
 - The **motor** and **monitor** nodes receive the target speed via CAN.  
@@ -43,9 +45,6 @@ Key components include:
 - For the three fans, the pulse count is converted to RPM.  
 - The **motor node** transmits the actual speed via CAN.  
 - The **monitor node** receives and displays both the target and actual speeds.
-
-### CAN (Controller Area Network)
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
 
 ### PID (Proportional–Integral–Derivative)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/f2104576-5ba6-4886-9b86-deb1f6a0e455" />
