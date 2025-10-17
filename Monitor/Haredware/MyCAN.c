@@ -16,7 +16,6 @@ void MyCAN_Init(void)
 	GPIO_InitSturcture.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA, &GPIO_InitSturcture);
 	
-	//初始化第三步CAN外設初始化
 	CAN_InitTypeDef CAN_InitStructure;
 	CAN_InitStructure.CAN_Mode = CAN_Mode_Normal;
 	CAN_InitStructure.CAN_Prescaler = 48;         
