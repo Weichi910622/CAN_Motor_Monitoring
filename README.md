@@ -33,7 +33,7 @@
 [R]------(CAN_L)-------+---------(CAN_L)------------------+-(CAN_L)---------+--[R]
 ```
 
-Key components include:
+Project components:
 - **CAN** communication module  
 - RedSensor for counting the actual RPM  
 - Motor & Motor driver module
