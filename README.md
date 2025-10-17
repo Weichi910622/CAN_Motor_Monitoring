@@ -36,6 +36,32 @@ Key components include:
 
 ## System Workflow
 
+```
+              ┌──────────────────────────┐
+              │      Control Node        │
+              │  - User sets target RPM  │
+              │    (+1000 / -1000) via keys
+              │  - Sends target RPM via CAN
+              └────────────┬─────────────┘
+                           │
+                ┌──────────┴───────────┐
+                │                      │
+                ▼                      ▼
+   ┌──────────────────────────┐   ┌──────────────────────────┐
+   │       Motor Node         │   │      Monitor Node        │
+   │  - Receives target RPM   │   │  - Receives target RPM   │
+   │  - PID adjusts motor PWM │   │    and actual RPM via CAN│
+   │  - Measures actual RPM   │   │  - Displays both on OLED │
+   │  - Sends actual RPM via CAN
+   └────────────┬─────────────┘   └──────────────────────────┘
+                │
+                │
+                ▼
+       (Feedback via CAN)
+       Actual RPM → Monitor
+```
+
+
 ### CAN (Controller Area Network)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
 
@@ -46,17 +72,6 @@ Key components include:
 - For the three fans, the pulse count is converted to RPM.  
 - The **motor node** transmits the actual speed via CAN.  
 - The **monitor node** receives and displays both the target and actual speeds.
-
-stateDiagram-v2
-    [*] --> Initialization
-    Initialization --> Target_Set: System Ready
-    Target_Set --> Motor_Running: Target Speed Sent
-    Motor_Running --> Speed_Detection: Motor Starts
-    Speed_Detection --> PID_Control: RPM Detected
-    PID_Control --> Speed_Detection: Error Feedback Loop
-    PID_Control --> Monitoring: Send Actual Speed via CAN
-    Monitoring --> Target_Set: User Adjusts Target Speed
-    Monitoring --> [*]: System Stop or Power Off
 
 ### PID (Proportional–Integral–Derivative)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/f2104576-5ba6-4886-9b86-deb1f6a0e455" />
