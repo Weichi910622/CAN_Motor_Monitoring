@@ -56,6 +56,7 @@ stateDiagram-v2
     PID_Control --> Speed_Detection: Error Feedback Loop
     PID_Control --> Monitoring: Send Actual Speed via CAN
     Monitoring --> Target_Set: User Adjusts Target Speed
+    Monitoring --> [*]: System Stop or Power Off
 
 ### PID (Proportional–Integral–Derivative)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/f2104576-5ba6-4886-9b86-deb1f6a0e455" />
