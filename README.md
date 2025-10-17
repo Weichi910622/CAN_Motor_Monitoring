@@ -14,6 +14,35 @@ This project implements CAN communication to transmit and receive messages in re
 
 ## Sensor and Circuit Design
 
+```
+┌─────────────────────────────┐
+│         Control Node         │
+│ ┌──────────────┐             │
+│ │   STM32 MCU   │            │
+│ ├──────────────┤             │
+│ │  Key +1k RPM │─┐           │
+│ │  Key -1k RPM │─┘           │
+│ │ CAN Transceiver │◄──┐      │
+│ └────────────────┘   │
+└──────────────────────┘
+                       │
+                       │  CAN Bus
+────────────────────────┼───────────────────────────────────────────────
+                       │
+                       │
+       ┌─────────────────────────────┐             ┌─────────────────────────────┐
+       │          Motor Node         │             │         Monitor Node         │
+       │ ┌──────────────┐            │             │ ┌──────────────┐             │
+       │ │   STM32 MCU   │            │             │ │   STM32 MCU   │             │
+       │ ├──────────────┤            │             │ ├──────────────┤             │
+       │ │ PID Controller│            │             │ │   OLED Display│◄────────────┐
+       │ │ CAN Transceiver│◄──────────┼─────────────┤ │ CAN Transceiver│             │
+       │ │ Motor Driver   │──► Motor  │             │ └──────────────┘             │
+       │ │ RedSensor (RPM)│──► MCU    │             │                             │
+       │ └──────────────┘             │             └─────────────────────────────┘
+       └─────────────────────────────┘
+```
+
 Key components include:
 - CAN communication module  
 - RedSensor for counting the actual RPM  
