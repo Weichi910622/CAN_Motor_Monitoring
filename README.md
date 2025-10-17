@@ -69,11 +69,11 @@ Key components include:
 ```
 
 ### Speed Monitoring
-- The **control node** transmits the target speed via CAN.  
-- The **motor** and **monitor** nodes receive the target speed via CAN.  
+- The **control node** transmits the target speed via **CAN**.  
+- The **motor** and **monitor** nodes receive the target speed via **CAN**.  
 - The **RedSensor** detects the pulse count.  
 - For the three fans, the pulse count is converted to RPM.  
-- The **motor node** transmits the actual speed via CAN.  
+- The **motor node** transmits the actual speed via **CAN**.  
 - The **monitor node** receives and displays both the target and actual speeds.
 
 ### CAN (Controller Area Network)
