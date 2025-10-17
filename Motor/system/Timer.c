@@ -3,7 +3,6 @@
 
 #define PULSES_PER_REVOLUTION   3
 
-
 void Timer_Init(void)
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
@@ -11,7 +10,7 @@ void Timer_Init(void)
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
 	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-	TIM_TimeBaseInitStructure.TIM_Period = 1000-1;    //定時時間 = 72M / 這兩個參數 = 100ms
+	TIM_TimeBaseInitStructure.TIM_Period = 1000-1;    
 	TIM_TimeBaseInitStructure.TIM_Prescaler = 7200-1;
 	TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseInitStructure);
@@ -30,14 +29,3 @@ void Timer_Init(void)
 	
 	TIM_Cmd(TIM3, ENABLE);
 }
-
-//void TIM3_IRQHandler(void)
-//{
-//	if(TIM_GetITStatus(TIM3, TIM_IT_Update) == SET)
-//	{
-//		count = RedSensor_Get();
-//		RPM = count * 200;
-//		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-//		RedSensor_Clear();
-//	}
-//}
