@@ -1,4 +1,4 @@
-# CAN_Motor_Monitoring(STM32F103C8T6)
+# CAN_Motor_Monitoring(STM32F103C8T6 & TJA1050)
 CAN communication is currently one of the most common communication methods used in automotive electronics.  
 This project implements CAN communication to transmit and receive messages in real time, enabling real-time monitoring and control of motor speed.
 
