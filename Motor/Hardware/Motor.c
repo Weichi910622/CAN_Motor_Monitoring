@@ -3,7 +3,6 @@
 
 void Motor_Init(void)
 {
-	/*开启时钟*/
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);	
 	
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -30,4 +29,5 @@ void Motor_SetSpeed(int8_t Speed)
 		PWM_SetCompare3(-Speed);			
 	}
 }
+
 
