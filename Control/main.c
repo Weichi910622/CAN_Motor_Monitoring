@@ -37,7 +37,6 @@ int main(void)
 	OLED_Init();
 	Key_Init();
 	MyCAN_Init();
-	Timer_Init();
 	
 	OLED_ShowString(1, 1, "Control");
 	OLED_ShowString(2, 1, "Target RPM:");
