@@ -36,6 +36,10 @@ Key components include:
 
 ## System Workflow
 
+### CAN(Controller Area Network)
+
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
+
 ### Speed Monitoring
 - Control node transmits target speed by CAN.
 - Motor and Monitor receive target speed by CAN.
@@ -43,9 +47,6 @@ Key components include:
 - For the three fans, changes count to RPM.
 - Motor transmits real speed by CAN.
 - Monitor receives and shows the real and target speed.
-### CAN(Controller Area Network)
-
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
 
 ### PID(Proportional-Integral-Derivative)
 
@@ -55,19 +56,24 @@ Key components include:
 
 ## Processing Pipeline
 
-1. **Initialization Phase**  
+1. **Initialization Phase**
+   
 Control node changes target speed by key and transmits target speed to Motor and Monitor.
 
 2. **Motor run**
+   
 Motor receives target speed and runs.
 
-3. **Detection Start**  
+3. **Detection Start**
+   
 RedSensor monitors the real-time counts and changes to RPM.
 
-4. **Close-Loop**  
+4. **Close-Loop**
+   
 Controlling motor speed by PID.
 
-5. **Monitoring** 
+5. **Monitoring**
+   
 Motor transmits real speed to Monitor.
 ---
 
