@@ -61,7 +61,6 @@ Key components include:
        Actual RPM → Monitor
 ```
 
-
 ### CAN (Controller Area Network)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
 
