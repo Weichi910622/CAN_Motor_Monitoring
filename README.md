@@ -1,6 +1,6 @@
 # CAN_Motor_Monitoring
-CAN communication is currently the most common communication method used in automotive electronics.
-This project implements CAN communication to transmit and receive messages in real time, allowing real-time monitoring and control of motor speed.
+CAN communication is currently one of the most common communication methods used in automotive electronics.  
+This project implements CAN communication to transmit and receive messages in real time, enabling real-time monitoring and control of motor speed.
 
 ---
 
@@ -9,13 +9,13 @@ This project implements CAN communication to transmit and receive messages in re
 - [Sensor and Circuit Design](#sensor-and-circuit-design)
 - [System Workflow](#system-workflow)
 - [Processing Pipeline](#processing-pipeline)
-- [Demo](#Demo)
+- [Demo](#demo)
 
 ---
 
 ## Hardware Platform
 
-### STM32F103C8T6 Development Board for 3
+### STM32F103C8T6 Development Board  
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/aa7097f9-7a91-48aa-a5fe-5a4d830a329f" />
 
 ---
@@ -23,12 +23,12 @@ This project implements CAN communication to transmit and receive messages in re
 ## Sensor and Circuit Design
 
 Key components include:
-- CAN Communication Module
-- RedSensor for counting the real RPM
-- Motor
-- Motor Driver Module
-- OLED
-- Key
+- CAN communication module  
+- RedSensor for counting the actual RPM  
+- Motor  
+- Motor driver module  
+- OLED display  
+- Key input  
 
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/4a4441ff-9b04-4706-97bb-04badf1ea1a3" />
 
@@ -36,45 +36,38 @@ Key components include:
 
 ## System Workflow
 
-### CAN(Controller Area Network)
+### Speed Monitoring
+- The **control node** transmits the target speed via CAN.  
+- The **motor** and **monitor** nodes receive the target speed via CAN.  
+- The **RedSensor** detects the pulse count.  
+- For the three fans, the pulse count is converted to RPM.  
+- The **motor node** transmits the actual speed via CAN.  
+- The **monitor node** receives and displays both the target and actual speeds.
 
+### CAN (Controller Area Network)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
 
-### Speed Monitoring
-- Control node transmits target speed by CAN.
-- Motor and Monitor receive target speed by CAN.
-- Count is detected by RedSensor.
-- For the three fans, changes count to RPM.
-- Motor transmits real speed by CAN.
-- Monitor receives and shows the real and target speed.
-
-### PID(Proportional-Integral-Derivative)
-
+### PID (Proportional–Integral–Derivative)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/f2104576-5ba6-4886-9b86-deb1f6a0e455" />
 
 ---
 
 ## Processing Pipeline
 
-1. **Initialization Phase**
-   
-Control node changes target speed by key and transmits target speed to Motor and Monitor.
+1. **Initialization Phase**  
+   The control node adjusts the target speed using the key and transmits it to both the motor and monitor nodes.
 
-2. **Motor run**
-   
-Motor receives target speed and runs.
+2. **Motor Operation**  
+   The motor receives the target speed and begins running.
 
-3. **Detection Start**
-   
-RedSensor monitors the real-time counts and changes to RPM.
+3. **Detection Phase**  
+   The RedSensor monitors the real-time pulse count and converts it to RPM.
 
-4. **Close-Loop**
-   
-Controlling motor speed by PID.
+4. **Closed-Loop Control**  
+   The motor speed is regulated using a PID controller.
 
-5. **Monitoring**
-   
-Motor transmits real speed to Monitor.
+5. **Monitoring Phase**  
+   The motor transmits the actual speed to the monitor for display.
 ---
 
 ## Demo
