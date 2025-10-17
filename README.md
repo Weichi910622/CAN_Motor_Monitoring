@@ -4,7 +4,7 @@ This project implements CAN communication to transmit and receive messages in re
 
 ---
 
-## Overview
+## Content
 - [Circuit Design](#sensor-and-circuit-design)
 - [System Workflow](#system-workflow)
 - [Processing Pipeline](#processing-pipeline)
