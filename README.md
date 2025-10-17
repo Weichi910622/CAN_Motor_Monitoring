@@ -1,23 +1,15 @@
-# CAN_Motor_Monitoring
+# CAN_Motor_Monitoring(STM32F103C8T6)
 CAN communication is currently one of the most common communication methods used in automotive electronics.  
 This project implements CAN communication to transmit and receive messages in real time, enabling real-time monitoring and control of motor speed.
 
 ---
 
 ## Overview
-- [Hardware Platform](#hardware-platform)
 - [Sensor and Circuit Design](#sensor-and-circuit-design)
 - [System Workflow](#system-workflow)
 - [Processing Pipeline](#processing-pipeline)
 - [Demo](#demo)
-
----
-
-## Hardware Platform
-
-### STM32F103C8T6 Development Board  
-<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/aa7097f9-7a91-48aa-a5fe-5a4d830a329f" />
-
+  
 ---
 
 ## Sensor and Circuit Design
