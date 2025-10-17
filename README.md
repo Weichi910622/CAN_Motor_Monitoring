@@ -38,6 +38,7 @@ Key components include:
 
 ### CAN (Controller Area Network)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/e247591e-3e25-4d7a-b4f2-890aa4cdaa7f" />
+
 ### Speed Monitoring
 - The **control node** transmits the target speed via CAN.  
 - The **motor** and **monitor** nodes receive the target speed via CAN.  
