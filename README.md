@@ -5,14 +5,14 @@ This project implements CAN communication to transmit and receive messages in re
 ---
 
 ## Overview
-- [Sensor and Circuit Design](#sensor-and-circuit-design)
+- [Circuit Design](#sensor-and-circuit-design)
 - [System Workflow](#system-workflow)
 - [Processing Pipeline](#processing-pipeline)
 - [Demo](#demo)
   
 ---
 
-## Sensor and Circuit Design
+## Circuit Design
 
 ```
 +----------------------------+  +-----------------------------+    +----------------------------+
@@ -36,8 +36,7 @@ This project implements CAN communication to transmit and receive messages in re
 Key components include:
 - CAN communication module  
 - RedSensor for counting the actual RPM  
-- Motor  
-- Motor driver module  
+- Motor & Motor driver module
 - OLED display  
 - Key input  
 
