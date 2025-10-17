@@ -1,10 +1,5 @@
 #include "stm32f10x.h"                  // Device header
 
-/**
-  * @brief
-  * @param
-  * @retval
-  */
  void Delay_us(uint32_t xus)
  {
 	 SysTick->LOAD = 72 *xus;
@@ -14,11 +9,6 @@
 	 SysTick->CTRL = 0x00000004;
  }
  
- /**
-  * @brief
-  * @param
-  * @retval
-  */
  void Delay_ms(uint32_t xms)
  {
 	 while(xms--)
@@ -27,11 +17,6 @@
 	 } 
  }
  
-  /**
-  * @brief
-  * @param
-  * @retval
-  */
  void Delay_s(uint32_t xs)
  {
 	 while(xs--)
