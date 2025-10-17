@@ -59,27 +59,26 @@ Key components include:
 
 ```
               ┌──────────────────────────┐
-              │      Control Node        │
-              │  - User sets target RPM  │
-              │    (+1000 / -1000) via keys
-              │  - Sends target RPM via CAN
+              │     Control Node         │
+              │ - User sets target RPM   │
+              │   (+1000 / -1000) via keys
+              │ - Sends target RPM via CAN
               └────────────┬─────────────┘
                            │
                 ┌──────────┴───────────┐
-                │                      │
+                │     Target RPM       │
                 ▼                      ▼
    ┌──────────────────────────┐   ┌──────────────────────────┐
-   │       Motor Node         │   │      Monitor Node        │
-   │  - Receives target RPM   │   │  - Receives target RPM   │
-   │  - PID adjusts motor PWM │   │    and actual RPM via CAN│
-   │  - Measures actual RPM   │   │  - Displays both on OLED │
-   │  - Sends actual RPM via CAN
-   └────────────┬─────────────┘   └──────────────────────────┘
-                │
-                │
-                ▼
-       (Feedback via CAN)
-       Actual RPM → Monitor
+   │     Motor Node           │   │     Monitor Node         │
+   │ - Receives target RPM    │   │ - Receives target RPM    │
+   │ - PID adjusts motor PWM  │   │   and actual RPM via CAN │
+   │ - Measures actual RPM    │   │ - Displays both on OLED  │
+   │ - Sends actual RPM via CAN
+   └────────────┬─────────────┘   └────▲──────────────────────┘
+                │                      │
+                │      Actual RPM      │
+                │   (Feedback via CAN) │
+                └──────────────────────┘
 ```
 
 ### Speed Monitoring
