@@ -47,6 +47,16 @@ Key components include:
 - The **motor node** transmits the actual speed via CAN.  
 - The **monitor node** receives and displays both the target and actual speeds.
 
+stateDiagram-v2
+    [*] --> Initialization
+    Initialization --> Target_Set: System Ready
+    Target_Set --> Motor_Running: Target Speed Sent
+    Motor_Running --> Speed_Detection: Motor Starts
+    Speed_Detection --> PID_Control: RPM Detected
+    PID_Control --> Speed_Detection: Error Feedback Loop
+    PID_Control --> Monitoring: Send Actual Speed via CAN
+    Monitoring --> Target_Set: User Adjusts Target Speed
+
 ### PID (Proportional–Integral–Derivative)
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/f2104576-5ba6-4886-9b86-deb1f6a0e455" />
 
